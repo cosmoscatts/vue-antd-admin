@@ -4,23 +4,45 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "build": "cross-env NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 vite build && esno ./build/script/postBuild.ts",
+    "build:report": "pnpm clean:cache && cross-env REPORT=true npm run build",
+    "preview": "npm run build && vite preview",
+    "reinstall": "rimraf pnpm-lock.yaml && rimraf yarn.lock && rimraf package.lock.json && rimraf node_modules && npm run install",
+    "clean:lib": "rimraf node_modules",
+    "gen:icon": "esno ./build/generate/icon/index.ts",
+    "batch:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
+    "upgrade:log": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
-    "vue": "^3.5.13"
+    "@ant-design/colors": "^7.2.0",
+    "@ant-design/icons-vue": "^7.0.1",
+    "@vue/shared": "^3.5.13",
+    "@vueuse/core": "^12.7.0",
+    "ant-design-vue": "~4.2.6",
+    "axios": "^1.7.9",
+    "dayjs": "^1.11.13",
+    "echarts": "^5.6.0",
+    "pinia": "^3.0.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.3.0",
+    "@iconify/json": "^2.2.310",
     "@types/node": "^22.13.5",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
     "eslint": "^9.21.0",
-    "typescript": "~5.7.2",
+    "fs-extra": "^11.3.0",
+    "rimraf": "^6.0.1",
+    "typescript": "~5.7.3",
+    "unocss": "^66.0.0",
     "unplugin-auto-import": "^19.1.0",
     "unplugin-vue-components": "^28.4.0",
     "vite": "^6.2.0",
+    "vite-plugin-compression": "^0.5.1",
     "vue-tsc": "^2.2.4"
   }
 }
