@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import 'virtual:uno.css';
+import { setupModules } from './hooks/app';
 
-createApp(App).mount('#app');
+setupModules(createApp(App));

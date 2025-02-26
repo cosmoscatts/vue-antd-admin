@@ -6,6 +6,7 @@ import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 import { compression as Compression } from 'vite-plugin-compression2';
+import Layouts from 'vite-plugin-vue-layouts';
 
 export default defineConfig({
   resolve: {
@@ -52,5 +53,7 @@ export default defineConfig({
       algorithm: 'gzip',
       threshold: 1024 * 10,
     }),
+
+    Layouts(),
   ],
 });

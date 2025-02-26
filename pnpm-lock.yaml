@@ -47,6 +47,9 @@ importers:
       vue-router:
         specifier: ^4.5.0
         version: 4.5.0(vue@3.5.13(typescript@5.7.3))
+      vue-router-better-scroller:
+        specifier: ^0.0.0
+        version: 0.0.0(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^4.3.0
@@ -93,6 +96,9 @@ importers:
       vite-plugin-compression2:
         specifier: ^1.3.3
         version: 1.3.3(rollup@4.34.8)(vite@6.2.0(@types/node@22.13.5)(jiti@2.4.2)(yaml@2.7.0))
+      vite-plugin-vue-layouts:
+        specifier: ^0.11.0
+        version: 0.11.0(vite@6.2.0(@types/node@22.13.5)(jiti@2.4.2)(yaml@2.7.0))(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
       vue-tsc:
         specifier: ^2.2.4
         version: 2.2.4(typescript@5.7.3)
@@ -2377,6 +2383,13 @@ packages:
     peerDependencies:
       vite: ^2.0.0||^3.0.0||^4.0.0||^5.0.0 ||^6.0.0
 
+  vite-plugin-vue-layouts@0.11.0:
+    resolution: {integrity: sha512-uh6NW7lt+aOXujK4eHfiNbeo55K9OTuB7fnv+5RVc4OBn/cZull6ThXdYH03JzKanUfgt6QZ37NbbtJ0og59qw==}
+    peerDependencies:
+      vite: ^4.0.0 || ^5.0.0
+      vue: ^3.2.4
+      vue-router: ^4.0.11
+
   vite@6.2.0:
     resolution: {integrity: sha512-7dPxoo+WsT/64rDcwoOjk76XHj+TqNTIvHKcuMQ1k4/SeHDaQt5GFAeLYzrimZrMpn/O6DtdI03WUjdxuPM0oQ==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
@@ -2433,6 +2446,12 @@ packages:
 
   vue-ripple-directive@2.0.1:
     resolution: {integrity: sha512-jXZEX6uZpo89wxmdcw02uFpsMBpm1pxjQ60uqghNLQ8H8ju9eon2vE0+vvSWJ1WGCOTEfxGDR4InabJJu5f1GA==}
+
+  vue-router-better-scroller@0.0.0:
+    resolution: {integrity: sha512-E+ovMBUOgr0TU6rYnc5X8h7rlu+QUkK2AMBXt2S6yMrAlW86cq6k5OExM4WnL4vfHbmJEtf+SbAtZ3H3bxYoBQ==}
+    peerDependencies:
+      vue: ^3.3.4
+      vue-router: ^4.2.2
 
   vue-router@4.5.0:
     resolution: {integrity: sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==}
@@ -5063,6 +5082,16 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
+  vite-plugin-vue-layouts@0.11.0(vite@6.2.0(@types/node@22.13.5)(jiti@2.4.2)(yaml@2.7.0))(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3)):
+    dependencies:
+      debug: 4.4.0
+      fast-glob: 3.3.3
+      vite: 6.2.0(@types/node@22.13.5)(jiti@2.4.2)(yaml@2.7.0)
+      vue: 3.5.13(typescript@5.7.3)
+      vue-router: 4.5.0(vue@3.5.13(typescript@5.7.3))
+    transitivePeerDependencies:
+      - supports-color
+
   vite@6.2.0(@types/node@22.13.5)(jiti@2.4.2)(yaml@2.7.0):
     dependencies:
       esbuild: 0.25.0
@@ -5096,6 +5125,11 @@ snapshots:
   vue-ripple-directive@2.0.1:
     dependencies:
       vue: 2.7.16
+
+  vue-router-better-scroller@0.0.0(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3)):
+    dependencies:
+      vue: 3.5.13(typescript@5.7.3)
+      vue-router: 4.5.0(vue@3.5.13(typescript@5.7.3))
 
   vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)):
     dependencies:
