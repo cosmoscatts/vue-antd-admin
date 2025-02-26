@@ -1,5 +1,6 @@
 import type { App } from 'vue';
 import 'virtual:uno.css';
+import '@/assets/styles/main.css';
 
 export const setupModules = (app: App, rootElement: string = '#app'): void => {
   const modules = import.meta.glob<ModuleInstaller>('@/modules/*.ts', { eager: true });

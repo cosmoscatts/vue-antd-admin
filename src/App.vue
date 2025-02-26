@@ -8,8 +8,14 @@ import zhCN from 'ant-design-vue/es/locale/zh_CN';
     :locale="zhCN"
     :get-popup-container="getPopupContainer"
   >
-    <a-app>
+    <a-app class="container">
       <RouterView />
     </a-app>
   </a-config-provider>
 </template>
+
+<style scoped>
+.container {
+  height: 100%;
+}
+</style>
